@@ -12,33 +12,7 @@
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
     
-     <!-- adding script to get the distance -->
-    <script>
-   window.addEventListener('load', () => {
-    const camera = document.querySelector('[camera]');
-    const marker = document.querySelector('a-marker');
-    let check;
-
-    marker.addEventListener('markerFound', () => {
-        let cameraPosition = camera.object3D.position;
-        let markerPosition = marker.object3D.position;
-        let distance = cameraPosition.distanceTo(markerPosition)
-
-        check = setInterval(() => {
-            cameraPosition = camera.object3D.position;
-            markerPosition = marker.object3D.position;
-            distance = cameraPosition.distanceTo(markerPosition)
-
-            // do what you want with the distance:
-            console.log(distance);
-        }, 100);
-    });
-   
-
-    marker.addEventListener('markerLost', () => {
-      clearInterval(check);
-    })
-})
+    
     </script>
     <!-- adding script say hi button -->  
       <script>
@@ -49,7 +23,7 @@
           // here you can change also a-scene or a-entity properties, like
           // changing your 3D model source, size, position and so on
           // or you can just open links, trigger actions...
-          alert("distance");
+          alert("Hello world");
         });
     };
 
