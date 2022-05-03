@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  
+<script>
+  AFRAME.registerComponent('marker-distance', {
+    tick: function () {
+        this.markerDistance()
+    },
+    markerDistance: function () {
+        var marker1Pos, marker2Pos
 
+        var marker1 = document.querySelector("#marker1")
+        var camera = document.querySelector('[camera]')
+
+        marker1Pos = new THREE.Vector3();
+        marker1.object3D.getWorldPosition(marker1Pos);
+
+        cameraPos = new THREE.Vector3();
+        camera.object3D.getWorldPosition(cameraPos);
+
+        //distance
+        distance = marker1Pos.distanceTo(cameraPos);
+        console.log("distance" + distance)
+        
+    }
+});
+</script>
+
+  
+<script>
+  AFRAME.registerComponent('markerhandler', {
+    init: function () {
+      this.el.sceneEl.addEventListener('click', () => {
+        // print something
+         alert('distance= ' + distance);;
+      })
+    }
+  });
+</script>
+
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+    <a-marker id="marker1" marker-distance type='barcode' value='5'>
+        <a-box position='0 0.5 0' color="yellow"></a-box>
+    </a-marker>
+    
+    
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
