@@ -21,25 +21,25 @@
         marker2.object3D.getWorldPosition(marker2Pos);
 
         //distance
-        this.d = marker1Pos.distanceTo(marker2Pos);
-        console.log("distance" + this.d)
-        alert('distance' + this.d)
+        distance = marker1Pos.distanceTo(marker2Pos);
+        console.log("distance" + distance)
+        alert('distance' + distance)
     }
 });
 </script>
 
-  <!--
+  
 <script>
   AFRAME.registerComponent('markerhandler', {
     init: function () {
       this.el.sceneEl.addEventListener('markerFound', () => {
         // print something
-         alert('Box clicked!');;
+         alert('distance' + distance);;
       })
     }
   });
 </script>
--->
+
 <body style="margin : 0px; overflow: hidden;">
   <a-scene
     vr-mode-ui="enabled: false;"
