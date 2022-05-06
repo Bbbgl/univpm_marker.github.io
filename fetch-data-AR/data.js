@@ -29,12 +29,12 @@
 
 
 
-fetch ('https://jsonplaceholder.typicode.com/posts').then(data=>{
+fetch ('https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A').then(data=>{
     //console.log(data);
     return data.json();
 }).then((completedata)=>{
     //console.log(completedata);
-    data1 = completedata[2].title;
+    data1 = completedata[0].room;
 
 }).catch((e)=>{
     console.log(e);
