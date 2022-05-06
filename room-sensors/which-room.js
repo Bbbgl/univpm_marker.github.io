@@ -6,7 +6,7 @@ AFRAME.registerComponent('marker-data', {
     },
     fetching: function () {
         fetch ('https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A').then(data=>{
-            whichRoom = data.room;
+            whichRoom = data[0].room;
         })
 
 
