@@ -34,7 +34,7 @@ fetch ('https://jsonplaceholder.typicode.com/posts').then(data=>{
     return data.json();
 }).then((completedata)=>{
     //console.log(completedata);
-    data1 = completedata.title;
+    data1 = completedata.id;
 
 }).catch((e)=>{
     console.log(e);
