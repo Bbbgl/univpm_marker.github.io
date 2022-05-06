@@ -30,7 +30,7 @@
 
 
 fetch ('https://jsonplaceholder.typicode.com/posts').then(data=>{
-    //console.log(data);
+    console.log(data);
     return data.json();
 }).then((completedata)=>{
     //console.log(completedata);
