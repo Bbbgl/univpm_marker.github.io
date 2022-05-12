@@ -6,10 +6,13 @@
 <script>
   AFRAME.registerComponent('clicker1', {
     init: function() {
+      this.el.addeventlistener('markerFound',() =>{
+        
         this.el.addEventListener('click', e => {
             alert('p!');
         });
     }
+ });
 });
 </script>
 
