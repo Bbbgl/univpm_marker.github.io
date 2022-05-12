@@ -9,7 +9,7 @@ AFRAME.registerComponent('sensor2', {
             id_device= data.sid;
             //console.log(data.sid);
             type_device= data.type;
-            name_device= data.name;
+            name_device2= data.name;
             room_device= data.room;
             time_device= data.timestamp;
             measure_device= data.measure;
