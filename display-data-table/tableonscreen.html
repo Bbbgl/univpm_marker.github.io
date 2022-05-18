@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="fetch-sensor-1.js"></script>
+
+<script>
+  AFRAME.registerComponent('clicker1', {
+    init: function() { 
+
+        //const el = document.getElementById("marker1");        
+        this.el.addEventListener('click', e => {
+          var element = document.querySelector('#entity1')
+          var immagine = document.querySelector('#immagineprova')
+          if (value_device > 21){
+            element.removeAttribute('gltf-model');
+            //immagine.parentNode.appendChild(immagine); //questo elimina l'oggetto --> provo a instanziare tutti gli oggetti e li rimuovo poi
+            immagine.setAttribute('scale', '2 2 2')
+          
+          }
+          
+            
+        });
+    }
+});
+</script>
+<!-- <script>
+AFRAME.registerComponent('remove-on-tick', {
+  tick: function () {
+    var entity = this.el;
+    if (value_device<21) {
+      entity.parentNode.removeChild(entity);
+    }
+  }
+});
+</script> -->
+
+
+
+
+
+   <style>
+    @import url(tablestyle.css);
+  </style> 
+</head>
+<body style="margin :0px; overflow: hidden;">
+
+  <div id="managerTable" >
+
+  <table class="blueTable">
+   
+    
+    <tr>
+    <td colspan="2">
+    
+    </td>
+    </tr>
+    
+    <tbody>
+    <tr>
+    <td>sid</td><td><span id="myDevice"></span></td></tr>
+    <tr>
+    <td>type</td><td><span id="myType"></span></td></tr>
+    <tr>
+    <td>name</td><td><span id="myName"></span></td></tr>
+    <tr>
+    <td>room</td><td><span id="myRoom"></span></td></tr>
+    <tr>
+    <td>time</td><td><span id="myTime"></span></td></tr>
+    <tr>
+    <td><span id="measure"></span></td><td><span id="myMeasure"></span></td></tr>
+    <tr>
+    <td><span id="measure2"></span></td><td><span id="myMeasure2"></span></td></tr>
+    <tr>
+    <td><span id="measure3"></span></td><td><span id="myMeasure3"></span></td></tr>
+    <tr>
+      <td><span id="InkLevel"></span></td><td><span id="myInkLevel"></span></td></tr>
+
+    </tbody>
+    </tr>
+    </table>
+    </div>
+    <a-scene
+    arjs
+    embedded
+    renderer="logarithmicDepthBuffer: true;"
+    vr-mode-ui="enabled: false"
+    gesture-detector
+    id="scene"
+  >
+  <a-assets>
+      <a-asset-item
+        id="asset1"
+        src="https://raw.githubusercontent.com/nicolocarpignoli/location-based-ar-tutorial/master/static-places/assets/magnemite/scene.gltf"
+        >
+
+      </a-asset-item>
+      <a-asset-item
+        id="asset2"
+        src="https://raw.githubusercontent.com/nicolocarpignoli/location-based-ar-tutorial/master/static-places/assets/magnemite/scene.gltf"
+        
+      >
+      </a-asset-item>
+
+    </a-assets>
+
+    <a-marker
+      preset="hiro"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="markerA"
+      sensor1
+    >
+      <a-entity
+        id="entity1"
+        gltf-model="#asset1"
+        position="0 0 0"
+        scale="0.5 0.5 0.5"
+        class="clickable"
+        clicker1
+      >
+      </a-entity>
+
+      <a-image id = "immagineprova" src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg"  clicker1 scale="0.002 0.002 0.002" ></a-image>
+    
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+    
+
+   
+
+</html>
