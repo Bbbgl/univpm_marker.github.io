@@ -1,21 +1,25 @@
-#managerTable {
-  padding-top: 100px;
-  padding-right: 20px;
-  overflow: auto;
+
+
+
+table.blueTable { position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 5em;
+  
+  
+  align-items: center;
+  z-index: 10;
+
+border: 1px solid #1C6EA4;
+background-color: #EEEEEE;
+
+text-align: centre;
+
+
+
+
 }
-
-
-
-table.blueTable {
-    border: 1px solid #1C6EA4;
-    background-color: #EEEEEE;
-    width: 20%;
-    height: 50vh;
-    text-align: centre;
-    border-collapse: collapse;
-    float: right;
-    
-  }
   table.blueTable td, table.blueTable th {
     border: 1px solid #AAAAAA;
     padding: 3px 2px;
